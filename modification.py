@@ -9,13 +9,12 @@
 import turtle
 import os
 import math
-import random
 import winsound
 import sys
 
 #Set up the screen
 wn = turtle.Screen()
-wn.bgcolor("blue")
+wn.bgcolor("red")
 wn.title("Space Impact")
 wn.bgpic("space_impact_background.gif")
 
@@ -97,7 +96,7 @@ bullet.setheading(90)
 bullet.shapesize(0.8, 0.8)
 bullet.hideturtle()
 
-bulletspeed = 38
+bulletspeed = 36
 
 
 #Define bullet state
@@ -155,7 +154,7 @@ def fire_bullet():
 
 def isCollision(t1, t2):
 	distance = math.sqrt(math.pow(t1.xcor()-t2.xcor(),2)+math.pow(t1.ycor()-t2.ycor(),2))
-	if distance < 15:
+	if distance < 20:
                
 		return True
 	else:
@@ -234,7 +233,7 @@ while True:
 		bullet.sety(y)
 	
 	#Check to see if the bullet has gone to the top
-	if bullet.ycor() > 290:
+	if bullet.ycor() > 280:
 		bullet.hideturtle()
 		bulletstate = "ready"
 		
